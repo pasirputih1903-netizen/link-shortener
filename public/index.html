@@ -133,7 +133,9 @@
 
       errorMsg.style.display = 'none'
       result.style.display = 'none'
-if (!url) {
+try {
+  new URL(url)
+} catch {
   errorMsg.style.display = 'block'
   return
 }
