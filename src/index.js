@@ -17,6 +17,16 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static(join(__dirname, '../public')))
 
+// Route halaman utama
+app.get('/', (req, res) => {
+  res.sendFile(join(__dirname, '../public/index.html'))
+})
+
+// Route redirect halaman
+app.get('/redirect.html', (req, res) => {
+  res.sendFile(join(__dirname, '../public/redirect.html'))
+})
+
 app.use('/api', linksRouter)
 app.use('/', linksRouter)
 
