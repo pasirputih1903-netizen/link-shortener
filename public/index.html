@@ -140,7 +140,7 @@ try {
   return
 }
 
-      const res = await fetch('/api/shorten', {
+      const res = await fetch('https://link-shortener-opal-beta.vercel.app/api/shorten', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ original_url: url })
